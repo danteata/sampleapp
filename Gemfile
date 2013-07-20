@@ -18,18 +18,34 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-group :production do 
-  gem "pg"
-end
+# group :production do 
+#   gem "pg"
+# end
 
 group :test do
   gem "capybara", "1.1.2"
+  gem 'rb-inotify', '~>0.9'
+  #system dependent gems (linux)
+  gem 'libnotify', '0.5.9'
+  #system dependent gem (mac)
+  # gem 'rb-fsevent', '0.9.1', :require => false
+  # gem 'growl', '1.0.3'
+  #system dependent gems (windows)
+  # gem 'rb-fchange', '0.0.5'
+  # gem 'rb-notifu', '0.0.4'
+  # gem 'win32console', '1.3.0'
 end
 
 group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails", "2.11.0"
+  gem "guard-rspec", "1.2.1"
+  gem 'guard-spork', '1.2.0'
+  gem 'childprocess', '~>0.3.6'
+  gem 'spork', '0.9.2'
 end
+
+gem "pg"
 
 gem 'jquery-rails'
 
